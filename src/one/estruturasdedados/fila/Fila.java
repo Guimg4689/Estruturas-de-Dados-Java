@@ -1,20 +1,20 @@
 package one.estruturasdedados.fila;
 
-public class Fila {
-    private  No  refNoEntrada;
+public class Fila <T>{
+    private  No<T>  refNoEntrada;
 
 
     public Fila(){
         this.refNoEntrada = null;
     }
 
-    public void enqueue(Object obj){
+    public void enqueue(T obj){
         No novoNo = new No(obj);
         novoNo.setRefNo(refNoEntrada);
         refNoEntrada = novoNo;
     }
 
-    public Object first(){
+    public T first(){
         if (!this.isEmpty()){
             No primeiroNo = refNoEntrada;
 
@@ -29,12 +29,12 @@ public class Fila {
 
                 }
             }
-            return primeiroNo.getObject();
+            return (T)primeiroNo.getObject();
         }
         return null;
     }
 
-    public Object dequeue(){
+    public T dequeue(){
         if (!this.isEmpty()){
             No primeiroNo = refNoEntrada;
             No aux = refNoEntrada;
@@ -51,7 +51,7 @@ public class Fila {
 
                 }
             }
-            return primeiroNo.getObject();
+            return (T)primeiroNo.getObject();
         }
         return null;
     }

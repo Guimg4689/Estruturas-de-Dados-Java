@@ -2,7 +2,7 @@ package one.estruturasdedados.fila;
 
 public class Main {
     public static void main(String[] args) {
-        Fila minhaFila = new Fila();
+        Fila<String> minhaFila = new Fila();
         minhaFila.enqueue(("Primeiro"));
         minhaFila.enqueue(("Segundo"));
         minhaFila.enqueue(("Terceiro"));
